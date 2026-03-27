@@ -13,7 +13,7 @@
 // External links include rel="noopener noreferrer" for security.
 
 import { motion } from 'framer-motion'
-import { Mail, Linkedin, Facebook, Download } from 'lucide-react'
+import { Mail, Linkedin, Download } from 'lucide-react'
 import SectionHeader from '@/components/ui/SectionHeader'
 import GradientButton from '@/components/ui/GradientButton'
 
@@ -22,10 +22,9 @@ const CONTACT_METHODS = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'vermaary@msu.edu',
-    href: 'mailto:vermaary@msu.edu',
+    value: 'averma2121@gmail.com',
+    href: 'mailto:averma2121@gmail.com',
     description: 'Send me a message',
-    // null target means opens in same tab — mailto links open the mail app, not a page
     target: undefined as string | undefined,
     color: 'from-indigo-500/20 to-indigo-600/10',
     border: 'hover:border-indigo-500/50',
@@ -42,17 +41,6 @@ const CONTACT_METHODS = [
     border: 'hover:border-blue-500/50',
     iconColor: 'text-blue-400',
   },
-  {
-    icon: Facebook,
-    label: 'Facebook',
-    value: 'Aryan Verma',
-    href: 'https://www.facebook.com/profile.php?id=100037927936684',
-    description: 'Connect on Facebook',
-    target: '_blank',
-    color: 'from-sky-500/20 to-sky-600/10',
-    border: 'hover:border-sky-500/50',
-    iconColor: 'text-sky-400',
-  },
 ]
 
 export default function ContactSection() {
@@ -62,11 +50,11 @@ export default function ContactSection() {
 
         <SectionHeader
           title="Get In Touch"
-          subtitle="I'm always open to new opportunities, collaborations, or just chatting about AI and basketball"
+          subtitle="Open to new opportunities — or just here to talk"
         />
 
         {/* Contact cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12 max-w-2xl mx-auto">
           {CONTACT_METHODS.map((method, i) => {
             const Icon = method.icon
             return (
