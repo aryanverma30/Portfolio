@@ -30,8 +30,8 @@ import GradientButton from '@/components/ui/GradientButton'
 const ROLES = [
   'CS Graduate',
   'AI Enthusiast',
-  'ML Engineer',
-  'Full Stack Developer',
+  'Software Engineer',
+  'Data Engineer',
   'Problem Solver',
 ]
 
@@ -165,7 +165,7 @@ export default function HeroSection() {
           Computer Science graduate from{' '}
           <span className="text-text-primary font-medium">Michigan State University</span>
           {' '}passionate about{' '}
-          <span className="gradient-text font-medium">AI, Machine Learning,</span>
+          <span className="gradient-text font-medium">AI</span>
           {' '}and building software that makes an impact.
         </motion.p>
 
