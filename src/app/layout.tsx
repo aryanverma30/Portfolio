@@ -18,11 +18,11 @@
 // Open Graph tags are what social media platforms (LinkedIn, Twitter, etc.)
 // read when generating link previews.
 
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 // Load the Inter font from Google Fonts.
 // next/font/google downloads the font at BUILD TIME and self-hosts it —
@@ -36,7 +36,7 @@ const inter = Inter({
   weight: ['400', '500', '600', '700', '800'],
   // display: 'swap' shows a fallback font until Inter loads (no invisible text flash)
   display: 'swap',
-})
+});
 
 // SEO and social sharing metadata
 // Next.js injects all of this into the <head> of every page
@@ -46,20 +46,10 @@ export const metadata: Metadata = {
   // title.default: used when a page doesn't set its own title
   title: {
     template: '%s | Aryan Verma',
-    default: 'Aryan Verma — CS Graduate & AI Enthusiast',
+    default: 'Aryan Verma’s Portfolio',
   },
   description:
-    'Portfolio of Aryan Verma, Computer Science graduate from Michigan State University. Passionate about AI, Machine Learning, and full-stack development.',
-  keywords: [
-    'Aryan Verma',
-    'CS Portfolio',
-    'Michigan State University',
-    'Computer Science',
-    'AI',
-    'Machine Learning',
-    'Software Engineer',
-    'Full Stack Developer',
-  ],
+    'Portfolio of Aryan Verma, Software Engineer at Humana and Computer Science graduate from Michigan State University.',
   authors: [{ name: 'Aryan Verma' }],
   // canonical URL — helps search engines avoid duplicate content issues
   // Update this once deployed to your actual Netlify domain
@@ -67,24 +57,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    title: 'Aryan Verma — CS Graduate & AI Enthusiast',
+    title: 'Aryan Verma’s Portfolio',
     description:
-      'Portfolio of Aryan Verma, Computer Science graduate from Michigan State University.',
+      'Portfolio of Aryan Verma, Software Engineer at Humana and Computer Science graduate from Michigan State University.',
     siteName: 'Aryan Verma Portfolio',
   },
   // robots: tells search engine crawlers what to do with this page
   robots: {
-    index: true,    // Include in search index
-    follow: true,   // Follow links on this page
+    index: true, // Include in search index
+    follow: true, // Follow links on this page
   },
-}
+};
 
 // RootLayout receives `children` — the current page component.
 // Next.js automatically passes the correct page into children based on the URL.
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     // lang="en" is required for accessibility — screen readers use this
@@ -102,12 +92,10 @@ export default function RootLayout({
 
         {/* <main> is the semantic landmark for the page's primary content.
             pt-16 accounts for the fixed navbar height (4rem = 64px). */}
-        <main className="flex-1 pt-16">
-          {children}
-        </main>
+        <main className="flex-1 pt-16">{children}</main>
 
         <Footer />
       </body>
     </html>
-  )
+  );
 }

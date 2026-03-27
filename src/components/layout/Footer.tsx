@@ -9,30 +9,30 @@
 // - Copyright notice
 // - "Built with" tech stack credit (good for recruiters to see)
 
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Mail } from 'lucide-react';
 
 // Social link data — update these URLs as needed
 const SOCIAL_LINKS = [
   {
     label: 'GitHub',
     href: 'https://github.com/aryanverma30',
-    // Lucide icons are React components that accept className for styling
-    icon: Github,
+    icon: FaGithub,
   },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/aryan-verma30',
-    icon: Linkedin,
+    icon: FaLinkedin,
   },
   {
     label: 'Email',
-    href: 'mailto:vermaary@msu.edu',
+    href: 'mailto:averma2121@gmail.com',
     icon: Mail,
   },
-]
+];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     // <footer> semantic element — signals to browsers and screen readers
@@ -40,7 +40,6 @@ export default function Footer() {
     <footer className="border-t border-divider bg-card-bg mt-0">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex flex-col items-center gap-6">
-
           {/* Social icons row */}
           <div className="flex items-center gap-6">
             {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
@@ -70,17 +69,15 @@ export default function Footer() {
               © {currentYear} Aryan Verma. All rights reserved.
             </p>
             <p className="text-text-muted text-xs">
-              Built with{' '}
-              <span className="text-accent">Next.js</span>
+              Built with <span className="text-accent">Next.js</span>
               {', '}
               <span className="text-accent-2">TypeScript</span>
               {', and '}
               <span className="text-accent">Tailwind CSS</span>
             </p>
           </div>
-
         </div>
       </div>
     </footer>
-  )
+  );
 }

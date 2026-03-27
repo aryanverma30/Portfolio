@@ -17,11 +17,11 @@
 // In Next.js, you can mix server and client components — only the parts
 // that NEED the browser are sent to the client as JavaScript.
 
-import HeroSection from '@/components/sections/HeroSection'
-import AboutSection from '@/components/sections/AboutSection'
-import SkillsSection from '@/components/sections/SkillsSection'
-import ProjectsSection from '@/components/sections/ProjectsSection'
-import ContactSection from '@/components/sections/ContactSection'
+import HeroSection from '@/components/sections/HeroSection';
+import AboutSection from '@/components/sections/AboutSection';
+import SkillsSection from '@/components/sections/SkillsSection';
+import ProjectsSection from '@/components/sections/ProjectsSection';
+import ContactSection from '@/components/sections/ContactSection';
 
 export default function HomePage() {
   return (
@@ -37,5 +37,5 @@ export default function HomePage() {
       <ProjectsSection />
       <ContactSection />
     </>
-  )
+  );
 }

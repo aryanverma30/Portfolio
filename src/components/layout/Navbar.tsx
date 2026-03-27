@@ -1,4 +1,4 @@
-'use client'
+'use client';
 // src/components/layout/Navbar.tsx
 //
 // The navigation bar that appears at the top of every page.
@@ -24,27 +24,27 @@
 //   exit={{ opacity: 0 }}    — state when the element is removed from DOM
 // Framer Motion handles all the interpolation (tweening) between these states.
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Code2 } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Code2 } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 // Navigation link definitions — edit this array to change the nav items.
 // `href` uses anchor links (#about, #skills, etc.) because this is a single-page app.
 const NAV_LINKS = [
-  { label: 'About',    href: '#about'    },
-  { label: 'Skills',   href: '#skills'   },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Contact',  href: '#contact'  },
-]
+  { label: 'Contact', href: '#contact' },
+];
 
 export default function Navbar() {
   // isScrolled: true once the user scrolls past 50px.
   // Controls the navbar background (transparent → frosted glass).
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // isMenuOpen: controls the mobile hamburger drawer visibility
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // useEffect runs AFTER the component mounts in the browser.
   // This is where we attach the scroll event listener.
@@ -52,19 +52,19 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       // If the user has scrolled more than 50px, show the frosted glass background
-      setIsScrolled(window.scrollY > 50)
-    }
+      setIsScrolled(window.scrollY > 50);
+    };
 
     // Attach the listener to the window scroll event
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll);
 
     // Cleanup function: removes the event listener when the Navbar unmounts.
     // Without this, the listener would persist as a memory leak.
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close the mobile menu whenever a link is clicked
-  const handleLinkClick = () => setIsMenuOpen(false)
+  const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
     // <header> is a semantic HTML5 element that tells browsers (and screen readers)
@@ -82,13 +82,8 @@ export default function Navbar() {
       {/* Inner container: max-width constraint + horizontal padding */}
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-
           {/* ---- LOGO / BRAND ---- */}
-          <a
-            href="#hero"
-            className="flex items-center gap-2 group"
-            aria-label="Go to top"
-          >
+          <a href="#hero" className="flex items-center gap-2 group" aria-label="Go to top">
             {/* Code2 is a Lucide icon — a "</>" symbol that signals developer identity */}
             <Code2 className="w-6 h-6 text-accent group-hover:text-accent-hover transition-colors" />
             <span className="font-bold text-text-primary group-hover:gradient-text transition-all">
@@ -179,5 +174,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }
