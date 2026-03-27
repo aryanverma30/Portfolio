@@ -17,53 +17,33 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     name: 'Languages',
-    // indigo accent — matches the primary brand color
     color: 'indigo',
-    skills: ['Python', 'Java', 'JavaScript', 'TypeScript', 'C++', 'SQL'],
+    skills: ['Python', 'SQL'],
   },
   {
-    name: 'AI & Machine Learning',
-    // violet — complementary to indigo, signals the AI/ML specialty
+    name: 'Data Engineering',
     color: 'violet',
     skills: [
-      'TensorFlow',
-      'PyTorch',
-      'scikit-learn',
-      'Pandas',
-      'NumPy',
-      'Matplotlib',
+      'Apache Spark',
+      'PySpark',
+      'Delta Lake',
+      'Delta Live Tables',
+      'Databricks Workflows',
     ],
   },
   {
-    name: 'Web Development',
-    // blue — classic web/frontend color
+    name: 'Platforms & Tools',
     color: 'blue',
-    skills: [
-      'React',
-      'Next.js',
-      'Node.js',
-      'Tailwind CSS',
-      'HTML5',
-      'CSS3',
-      'REST APIs',
-    ],
+    skills: ['Databricks', 'Snowflake', 'Azure', 'Oracle'],
   },
   {
-    name: 'Data & Algorithms',
-    // emerald — green signals data/infrastructure
+    name: 'Dev Tools',
     color: 'emerald',
-    skills: [
-      'Data Structures',
-      'Algorithms',
-      'Big Data',
-      'MySQL',
-      'PostgreSQL',
-    ],
+    skills: ['Git', 'GitHub', 'GitHub Copilot', 'Claude'],
   },
   {
-    name: 'Tools & Platforms',
-    // slate — neutral gray for tooling/infrastructure
+    name: 'Data Formats',
     color: 'slate',
-    skills: ['Git', 'GitHub', 'VS Code', 'IntelliJ IDEA', 'Netlify', 'Vercel'],
+    skills: ['JSON', 'Parquet'],
   },
 ]
