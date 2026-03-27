@@ -1,0 +1,55 @@
+{
+  // TypeScript configuration for Next.js 15.
+  // TypeScript is a superset of JavaScript that adds static types.
+  // This file tells the TypeScript compiler how to behave.
+  "compilerOptions": {
+    // "target" is the JavaScript version TypeScript compiles down to.
+    // ES2017 is widely supported and enables async/await without polyfills.
+    "target": "ES2017",
+
+    // "lib" lists the built-in type definitions to include.
+    // "dom" gives us types for browser APIs (window, document, etc.)
+    // "dom.iterable" enables iterating over DOM collections
+    // "esnext" includes the latest ECMAScript type definitions
+    "lib": ["dom", "dom.iterable", "esnext"],
+
+    // Allow importing .js files without writing the extension
+    "allowJs": true,
+
+    // Skip type-checking for files inside node_modules (much faster builds)
+    "skipLibCheck": true,
+
+    // "strict" mode enables all strict type-checking rules.
+    // This catches more bugs at compile time — highly recommended.
+    "strict": true,
+
+    // Don't emit compiled files — Next.js handles compilation itself
+    "noEmit": true,
+
+    // Allow default imports from modules with no default export
+    "esModuleInterop": true,
+
+    // Use the modern "bundler" module resolution — works best with Next.js
+    "module": "esnext",
+    "moduleResolution": "bundler",
+
+    // Allow importing .tsx and .ts files
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+
+    // Incremental compilation caches results for faster rebuilds
+    "incremental": true,
+
+    // Next.js specific options
+    "plugins": [{ "name": "next" }],
+
+    // Path aliases — "@/*" maps to "src/*"
+    // e.g., import Button from "@/components/ui/Button" instead of "../../components/ui/Button"
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

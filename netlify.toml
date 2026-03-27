@@ -1,0 +1,30 @@
+# netlify.toml
+# This file tells Netlify how to build and deploy your Next.js site.
+# Netlify reads this file before starting a deployment.
+#
+# Without this file, Netlify would try to guess your build settings.
+# With it, you have explicit, version-controlled configuration.
+
+[build]
+  # The shell command Netlify runs to build your site
+  command = "npm run build"
+
+  # The directory Netlify serves after building.
+  # Next.js outputs its build artifacts to the .next/ folder.
+  publish = ".next"
+
+  [build.environment]
+    # Pin the Node.js version for reproducible builds.
+    # Netlify's default Node version may differ from your local version,
+    # causing subtle build differences. Node 20 is the current LTS.
+    NODE_VERSION = "20"
+
+# The @netlify/plugin-nextjs plugin enables full Next.js support on Netlify:
+#   - Server-Side Rendering (SSR) via Netlify Edge Functions
+#   - Next.js Image Optimization (converts your JPGs to WebP/AVIF)
+#   - API Routes and middleware support
+#   - Incremental Static Regeneration (ISR)
+#
+# Without this plugin, only static pages would work — SSR features would break.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

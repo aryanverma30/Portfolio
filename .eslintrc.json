@@ -1,0 +1,13 @@
+{
+  // ESLint configuration for Next.js.
+  // ESLint is a "linter" — it statically analyzes your code for common mistakes,
+  // style violations, and accessibility issues WITHOUT running the code.
+  //
+  // "next/core-web-vitals" extends the base Next.js rules with stricter checks
+  // for Core Web Vitals — Google's performance metrics that affect SEO ranking.
+  // Examples of what it catches:
+  //   - Using <img> instead of Next.js <Image> (performance issue)
+  //   - Missing key props on lists (React bug)
+  //   - Synchronous scripts that block page load
+  "extends": ["next/core-web-vitals", "next/typescript"]
+}
