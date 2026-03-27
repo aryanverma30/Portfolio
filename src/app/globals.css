@@ -1,0 +1,129 @@
+/*
+  globals.css
+  ============
+  This is the single global CSS file for the entire app.
+  It's imported once in layout.tsx and applies to every page.
+
+  TAILWIND DIRECTIVES:
+  @tailwind base      — Injects Tailwind's "preflight" reset (removes browser default
+                        margins, padding, font sizes so we start from a clean slate)
+  @tailwind components — Injects any component classes (we don't use many here)
+  @tailwind utilities  — Injects all the utility classes you use in your JSX
+                         (text-xl, bg-slate-900, flex, etc.)
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   BASE STYLES
+   These apply globally via Tailwind's @layer base mechanism.
+   @layer tells Tailwind where to insert these rules so specificity is correct.
+   ========================================================================= */
+
+@layer base {
+  /*
+    html: Smooth scrolling for anchor links.
+    When a user clicks "View Projects" in the navbar (which links to #projects),
+    the page smoothly scrolls to that section instead of jumping instantly.
+  */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /*
+    body: Set the default background and text color for the entire site.
+    Using CSS custom properties here so they cascade to all children.
+    The navy background (#0a0f1e) is our design's foundation color.
+  */
+  body {
+    @apply bg-navy text-text-primary;
+    /* Antialiased smooths font rendering on retina/high-DPI screens */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /*
+    Consistent focus styles for keyboard navigation and accessibility.
+    By default browsers show an ugly blue outline — we replace it with
+    our indigo accent color to match the design system.
+  */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-navy;
+  }
+}
+
+/* =========================================================================
+   UTILITY CLASSES
+   Custom reusable utilities defined via @layer utilities.
+   These behave exactly like Tailwind built-ins — responsive variants work,
+   e.g. `md:gradient-text` is valid.
+   ========================================================================= */
+
+@layer utilities {
+  /*
+    .gradient-text
+    Applies the indigo→violet gradient to text.
+    Used on section titles and the hero name.
+
+    How it works:
+    1. background: set a linear gradient as the background
+    2. background-clip: text — clips the background to the text shape only
+    3. -webkit-text-fill-color: transparent — makes the text transparent
+       so the gradient background shows through
+  */
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent;
+  }
+
+  /*
+    .gradient-border
+    Creates a card with a gradient border using a CSS pseudo-element trick.
+    The card itself has a transparent border; the gradient sits behind it.
+  */
+  .gradient-border {
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /*
+    .section-padding
+    Consistent vertical padding for every section.
+    Keeps the page rhythm uniform — you change one class to respace everything.
+  */
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* =========================================================================
+   SCROLLBAR STYLING
+   Custom scrollbar to match the dark theme.
+   This is a non-standard CSS extension supported in Chrome/Edge/Safari.
+   Firefox uses `scrollbar-color` instead.
+   ========================================================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0f1e; /* navy */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937; /* divider color */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1; /* accent indigo on hover */
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1f2937 #0a0f1e;
+}
