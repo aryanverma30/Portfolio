@@ -60,47 +60,23 @@ export default function AboutSection() {
 
         {/* Two-column grid on large screens, single column on mobile */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* ---- LEFT: Photo Stack ---- */}
+          {/* ---- LEFT: Headshot ---- */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            // The photo stack needs relative positioning so the absolute children
-            // are positioned relative to this container, not the page
-            className="relative h-[400px] lg:h-[500px] flex items-center justify-center"
+            className="flex items-center justify-center"
           >
-            {/* Photo 1 — back-left, slightly rotated counter-clockwise */}
-            <div
-              className="absolute w-56 h-72 -left-4 top-8 rotate-[-4deg] z-10
-                          rounded-2xl overflow-hidden shadow-2xl border-2 border-divider
-                          hover:z-30 hover:rotate-0 transition-all duration-500"
-            >
+            <div className="relative w-72 h-96 rounded-2xl overflow-hidden shadow-2xl border-2 border-accent/40 hover:scale-105 transition-all duration-500">
               <Image
-                src="/images/picture4.pdf"
+                src="/images/headshot.jpg"
                 alt="Aryan Verma"
                 fill
-                sizes="(max-width: 768px) 40vw, 20vw"
+                sizes="(max-width: 768px) 80vw, 35vw"
                 className="object-cover object-top"
-              />
-            </div>
-
-            {/* Photo 2 — front-center, no rotation, highest z-index */}
-            <div
-              className="absolute w-60 h-76 left-1/2 -translate-x-1/2 z-20
-                          rounded-2xl overflow-hidden shadow-2xl border-2 border-accent/40
-                          hover:z-30 hover:scale-105 transition-all duration-500"
-            >
-              <Image
-                src="/images/picture1.jpg"
-                alt="Aryan Verma"
-                fill
-                sizes="(max-width: 768px) 45vw, 22vw"
-                className="object-cover object-top"
-                // priority: loads this image eagerly (above the fold on larger screens)
                 priority
               />
-              {/* Gradient accent border glow */}
               <div className="absolute inset-0 rounded-2xl ring-2 ring-accent/20 pointer-events-none" />
             </div>
           </motion.div>
