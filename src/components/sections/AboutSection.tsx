@@ -35,7 +35,7 @@ const INFO_CARDS = [
   {
     icon: Brain,
     title: 'Interests',
-    content: 'Artificial Intelligence · Machine Learning · Big Data',
+    content: 'AI · Software Engineering · Data Engineering',
     accent: 'text-accent-2',
   },
   {
@@ -91,16 +91,16 @@ export default function AboutSection() {
               transition={{ duration: 0.7, ease: 'easeOut' }}
             >
               <p className="text-text-secondary text-lg leading-relaxed mb-4">
-                I&apos;m a Computer Science graduate with a deep passion for the intersection of{' '}
-                <span className="text-text-primary font-medium">Artificial Intelligence</span> and
-                real-world problem solving. I love building things — whether it&apos;s training a
-                model, architecting a system, or crafting a clean UI.
+                CS grad and software engineer focused on{' '}
+                <span className="text-text-primary font-medium">data engineering</span> — building
+                pipelines, wrangling data, and making it actually useful. Big fan of{' '}
+                <span className="text-text-primary font-medium">AI tools</span> and always
+                experimenting with what they can do.
               </p>
               <p className="text-text-secondary text-lg leading-relaxed">
-                Off the computer, I&apos;ve been playing{' '}
-                <span className="text-text-primary font-medium">basketball</span> since I was 2
-                years old. The discipline, teamwork, and competitive drive from playing varsity in
-                high school carries directly into how I approach engineering challenges.
+                Outside of work, I&apos;m into fitness and have been playing{' '}
+                <span className="text-text-primary font-medium">basketball</span> since I was 2 —
+                even played varsity in high school. That competitive drive never really goes away.
               </p>
             </motion.div>
 
