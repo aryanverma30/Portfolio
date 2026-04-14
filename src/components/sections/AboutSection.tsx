@@ -1,30 +1,10 @@
 'use client';
-// src/components/sections/AboutSection.tsx
-//
-// Personal background, education, interests, and fun facts.
-//
-// LAYOUT (responsive):
-//   Mobile:  Single column — photos stacked above text
-//   Desktop: Two columns — photos left, text content right (lg:grid-cols-2)
-//
-// PHOTO LAYOUT:
-// Instead of the old Bootstrap carousel (which broke on mobile), we use a
-// CSS grid with overlapping photos at different rotations. Each photo has a
-// slight rotation offset and different z-index, creating a "scattered stack" look.
-//
-// NEXT.JS Image COMPONENT:
-// All three photos (picture1-3.jpg) are 1.6–1.8 MB JPEGs.
-// next/image automatically:
-//   1. Converts them to WebP/AVIF (~150KB on mobile)
-//   2. Serves different sizes based on viewport (sizes prop)
-//   3. Lazy-loads photos that are off-screen
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { GraduationCap, Brain, Trophy, Heart } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
 
-// Info card data — easy to update without touching JSX
 const INFO_CARDS = [
   {
     icon: GraduationCap,
@@ -58,9 +38,7 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto">
         <SectionHeader title="About Me" subtitle="A little about who I am beyond the code" />
 
-        {/* Two-column grid on large screens, single column on mobile */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* ---- LEFT: Headshot ---- */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -81,9 +59,7 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* ---- RIGHT: Text Content ---- */}
           <div className="space-y-6">
-            {/* Opening bio */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -104,7 +80,6 @@ export default function AboutSection() {
               </p>
             </motion.div>
 
-            {/* Info cards grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {INFO_CARDS.map((card, i) => {
                 const Icon = card.icon;
@@ -114,11 +89,9 @@ export default function AboutSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    // Staggered delay: each card appears 100ms after the previous
                     transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.1 }}
                     className="flex gap-3 p-4 rounded-xl bg-card-bg border border-divider hover:border-accent/30 transition-colors"
                   >
-                    {/* Icon with category accent color */}
                     <div className={`mt-0.5 shrink-0 ${card.accent}`}>
                       <Icon className="w-5 h-5" />
                     </div>

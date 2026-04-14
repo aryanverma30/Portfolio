@@ -1,23 +1,10 @@
 'use client'
-// src/components/sections/ContactSection.tsx
-//
-// The final section — three contact method cards plus a resume download CTA.
-//
-// Each contact card is a clickable link that opens the appropriate app:
-//   - Email card:    opens the user's default mail client via mailto:
-//   - LinkedIn card: opens LinkedIn profile in a new tab
-//   - Facebook card: opens Facebook profile in a new tab
-//
-// ACCESSIBILITY:
-// All links have aria-label attributes so screen readers can describe them.
-// External links include rel="noopener noreferrer" for security.
 
 import { motion } from 'framer-motion'
 import { Mail, Linkedin, Download } from 'lucide-react'
 import SectionHeader from '@/components/ui/SectionHeader'
 import GradientButton from '@/components/ui/GradientButton'
 
-// Contact method data — update href values if your contact info changes
 const CONTACT_METHODS = [
   {
     icon: Mail,
