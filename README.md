@@ -2,8 +2,7 @@
 
 Personal portfolio website built with Next.js.
 
-**Live:** https://aryanverma30.netlify.app  
-**GitHub:** https://github.com/aryanverma30/Portfolio
+**Live:** https://aryanverma30.netlify.app
 
 ---
 
@@ -37,15 +36,4 @@ src/
 │   └── skills.ts           Skill categories
 └── lib/
     └── utils.ts            cn() helper (clsx + tailwind-merge)
-```
-
----
-
-## Getting Started
-
-```bash
-npm install
-npm run dev        # http://localhost:3000
-npm run build      # production build
-npm run type-check # TypeScript check
 ```
