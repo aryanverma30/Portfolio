@@ -97,8 +97,9 @@ export default function ContactSection() {
             Want the full picture? Download my resume.
           </p>
 
+          {/* TODO: replace href with a hosted link (Google Drive, Notion, etc.) before deploying */}
           <GradientButton
-            href="/resume.pdf"
+            href="#"
             variant="primary"
             target="_blank"
             rel="noopener noreferrer"

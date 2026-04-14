@@ -121,8 +121,9 @@ export default function HeroSection() {
           <GradientButton href="#projects" variant="primary">
             View Projects
           </GradientButton>
+          {/* TODO: replace href with a hosted link (Google Drive, Notion, etc.) before deploying */}
           <GradientButton
-            href="/resume.pdf"
+            href="#"
             variant="ghost"
             target="_blank"
             rel="noopener noreferrer"

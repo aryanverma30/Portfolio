@@ -26,3 +26,6 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+
+# Resume — host externally (Google Drive, etc.) instead of committing to repo
+public/resume.pdf

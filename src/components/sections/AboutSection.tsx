@@ -47,6 +47,7 @@ export default function AboutSection() {
             className="flex items-center justify-center"
           >
             <div className="relative w-72 h-96 rounded-2xl overflow-hidden shadow-2xl border-2 border-accent/40 hover:scale-105 transition-all duration-500">
+              {/* TODO: compress headshot.jpg to under 200KB before deploying */}
               <Image
                 src="/images/headshot.jpg"
                 alt="Aryan Verma"
